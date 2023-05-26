@@ -79,3 +79,4 @@ gem 'rspec-rails', group: [ :test ]
 gem 'rails-controller-testing', group: [ :test ]
 #gestion des clefs d'api en local dans .env :
 gem "dotenv-rails", groups: [:development, :test]
+gem "cloudinary"
