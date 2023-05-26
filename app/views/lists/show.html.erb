@@ -1,0 +1,30 @@
+
+<div class="container"><h1> List  <%= @list.name %></h1>
+  <%# <p> Number of movies : <%= @list.length  </p> %>
+  <p><strong> List of Bookmarks : </strong></p>
+  <ul class="list-group">
+    <% @list.bookmarks.each do |bookmark| %>
+      <li class="list-group-item"><%= bookmark.comment %> - Movie : <%= bookmark.movie.title %>
+        <div class="container">
+          <div class="container">
+            <%= image_tag bookmark.movie.poster_url, alt: "bookmark.movie.title", width: 200 %>
+          </div>
+          <p><%= bookmark.movie.overview %>   </p>
+        </div>
+        <button>
+          <%= link_to "Delete",
+            bookmark_path(bookmark),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+          %>
+        </button>
+
+      </li>
+    <% end %>
+  </ul>
+  <br>
+
+  <div class="container">
+    <%= link_to "Add a bookmark", new_list_bookmark_path(@list), class: "btn btn-primary"%>
+    <%= link_to "Back to Lists", lists_path, class: "btn btn-primary"%>
+  </div>
+</div>

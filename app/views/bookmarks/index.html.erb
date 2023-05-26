@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>All the bookmarks for the list : <% @list.name %> </h1>
+
+    <ul> <% @bookmarks.each do |bookmark| %>
+      <% if bookmark.list == @list %>
+        <li>  <%= bookmark.comment %> - Movie :  <%= bookmark.movie.title %> </li>
+      <% end %>
+    <% end %>
+    </ul>
+
+  <%# <button> %>
+    <%= link_to "Back to list", list_path(@list), class: "btn btn-primary" %>
+  <%# </button> %>
+</div>

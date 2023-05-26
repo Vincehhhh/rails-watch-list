@@ -45,6 +45,17 @@ gem "bootsnap", require: false
 # Use Sass to process CSS
 # gem "sassc-rails"
 
+
+# ajout des gem nécessaires :
+
+# Autoprefixer is a tool to add browser prefixes to CSS rules using the Can I Use database.
+gem "autoprefixer-rails"
+
+gem "font-awesome-sass", "~> 6.1"
+gem "simple_form"
+gem "sassc-rails"
+
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -66,10 +77,5 @@ end
 
 gem 'rspec-rails', group: [ :test ]
 gem 'rails-controller-testing', group: [ :test ]
-
-# ajout des gem nécessaires :
-
-gem "autoprefixer-rails"
-gem "font-awesome-sass", "~> 6.1"
-gem "simple_form"
-gem "sassc-rails"
+#gestion des clefs d'api en local dans .env :
+gem "dotenv-rails", groups: [:development, :test]
